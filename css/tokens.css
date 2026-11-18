@@ -1,0 +1,87 @@
+/* ============================================================
+ *  tokens.css · 设计常量（非颜色值）
+ *  颜色变量全部在 theme.css 中定义，这里只放字体 / 间距 / 圆角 / 阴影尺寸 / 层级等。
+ * ========================================================== */
+:root {
+  --font-cn: "Songti SC", "STSong", "SimSun", "宋体", serif;
+  --font-en: Georgia, "Times New Roman", serif;
+  --app-font: var(--font-cn);
+
+  --fs-display: 31px;
+  --fs-h1: 25px;
+  --fs-h2: 20px;
+  --fs-h3: 16px;
+  --fs-body: 13px;
+  --fs-sm: 12px;
+  --fs-xs: 10px;
+
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semi: 600;
+  --fw-bold: 700;
+
+  --lh-body: 1.7;
+  --lh-tight: 1.4;
+  --lh-loose: 2.0;
+
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-full: 999px;
+  --r-inner: calc(var(--r-lg) - 8px);
+
+  --avatar-radius: 14%;
+  --avatar-sm: 32px;
+  --avatar-md: 48px;
+  --avatar-lg: 64px;
+
+  --app-max-width: 780px;
+
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 380ms;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --ls-tight: 1px;
+  --ls-normal: 2px;
+  --ls-wide: 3px;
+  --ls-wider: 6px;
+
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+  --icon-stroke: 1.5px;
+
+  --control-h-lg: 40px;
+  --control-h-md: 32px;
+  --control-h-sm: 24px;
+  --control-radius: 8px;
+
+  --sp-base: 4px;
+  --sp-xs: 4px;
+  --sp-sm: 8px;
+  --sp-md: 12px;
+  --sp-lg: 16px;
+  --sp-xl: 24px;
+  --sp-xxl: 32px;
+
+  --nav-h-top: 64px;
+  --nav-h-sub: 48px;
+  --nav-w-side: 200px;
+
+  --tree-line-height: 40px;
+
+  --z-page: 1;
+  --z-screen: 100;
+  --z-quote: 200;
+  --z-menu: 300;
+  --z-overlay: 400;
+  --z-drawer: 500;
+  --z-modal: 600;
+  --z-toast: 700;
+}

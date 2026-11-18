@@ -1,0 +1,87 @@
+@font-face{font-family:'LikeJian';src:url('../fonts/LikeJian.ttf') format('truetype'),url('https://cdn.jsdelivr.net/gh/maoken-fonts/MaokenYingBiKaiShuJ@main/MaokenYingBiKaiShuJ_0.20.ttf') format('truetype');font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0) !important;-webkit-touch-callout:none;user-select:none}
+button,.d-icon,.send-btn,.topbar-btn,.func-item,.ss-ico,.mood-act,.cl-act,.gch-func-item,.gch-d-icon,.gch-at-item,.gch-mdel,.modal .x,.uni-confirm-layer button{-webkit-tap-highlight-color:transparent !important;outline:none !important}
+.d-icon,.send-btn,.topbar-btn{background-color:transparent}
+.d-icon:active,.send-btn:active,.topbar-btn:active,.func-item:active,.ss-ico:active,.mood-act:active,.cl-act:active,.gch-func-item:active,.gch-d-icon:active,.gch-at-item:active,.gch-mdel:active{background-color:transparent !important;outline:none !important;box-shadow:none !important}
+/* ★ 开屏启动页样式 */
+#bootLoader {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  background: var(--th-bg1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--app-font);
+  cursor: pointer;
+}
+#bootLoader .boot-icon {
+  width: 80px; height: 80px;
+  margin-bottom: 24px;
+}
+#bootLoader .boot-name {
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  color: var(--th-text);
+  margin-bottom: 8px;
+}
+#bootLoader .boot-sub {
+  font-size: 9px;
+  letter-spacing: 6px;
+  color: #bde8f5;
+  font-family: Georgia, serif;
+  font-weight: bold;
+}
+#bootLoader .boot-line {
+  width: 20px;
+  height: 1px;
+  background: #bde8f5;
+  margin-top: 20px;
+}
+/* ★ 输入框放开选中和呼出键盘 */
+input,textarea,select,[contenteditable="true"]{
+  -webkit-user-select:text !important;
+  user-select:text !important;
+  -webkit-touch-callout:default !important;
+  /* ★ 点击时不要出现黑色高亮/焦点黑边 */
+  -webkit-tap-highlight-color:transparent !important;
+}
+input:focus,textarea:focus,select:focus,[contenteditable="true"]:focus{outline:none !important}
+/* ★ 所有搜索框聚焦时都不加黑色描边 */
+.search-box:focus-within,.cd-search:focus-within,.nf-search:focus-within,
+.dr-search:focus-within,.bh-search:focus-within,.rel-search:focus-within,
+.cs-input:focus-within{outline:none !important}
+/* ★ 修复：部分安卓内核（雨见/夸克等）会在输入框旁画一根黑线
+   根因是 caret-color 跟随主题时，细体字下的光标位置异常。
+   这里只针对聊天输入框处理，其余输入框不动。 */
+.d-bar textarea{
+  caret-color: var(--th-text);
+}
+#page-chat.minimal-mode .d-bar textarea{
+  caret-color: var(--th-text);
+}
+.gch-bar textarea{
+  caret-color: var(--th-text);
+}
+/* 兜底：如果还是画黑线，让内核强制重绘输入框 */
+.d-bar, .gch-bar{
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+html,body{height:100%;overflow:hidden}
+body{font-family:var(--app-font);background:var(--th-bg0);color:var(--th-text)}
+
+#app{position:fixed;inset:0;top:0;left:0;right:0;bottom:0;max-width:780px;margin:0 auto;overflow:hidden;touch-action:auto;z-index:1;background:var(--th-bg0)}
+.tabbar{position:absolute;bottom:0;left:0;right:0;height:72px;background:var(--th-bg1);border-top:0.7px solid var(--th-text);display:flex;align-items:stretch;justify-content:space-around;padding:0 6px;z-index:50;transition:transform .2s ease}
+#app.kb-open .tabbar{transform:translateY(100%)}
+#app.kb-open{overflow:hidden}
+/* ★ 键盘弹起时输入栏不需要任何位移，浏览器会自动压缩 #app，
+   输入栏自然贴在键盘上方。这里只保证它不被聊天列表盖住。 */
+#app.kb-open-real .d-bar{position:relative;z-index:20;margin-bottom:0}
+#app.kb-open-real .gch-bar{position:relative;z-index:20;margin-bottom:0}
+/* 键盘弹起时，列表不需要额外底部留白（输入栏是 flex 兄弟项，不会被盖住） */
+#app.kb-open-real #chatList{padding-bottom:20px}
+#app.kb-open-real .gch-list{padding-bottom:20px}
+
